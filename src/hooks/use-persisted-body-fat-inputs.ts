@@ -12,6 +12,8 @@ export function usePersistedBodyFatInputs(): [BodyFatInputsState, (arg: BodyFatI
       if (row) {
         setState({
           gender: row.gender,
+          age: row.age ?? undefined,
+          unitPreference: row.unitPreference ?? undefined,
           heightCm: row.heightCm ?? undefined,
           weightKg: row.weightKg ?? undefined,
           neckCm: row.neckCm ?? undefined,

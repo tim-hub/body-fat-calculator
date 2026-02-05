@@ -3,6 +3,8 @@ import Dexie, { type Table } from 'dexie'
 export interface BodyFatInputsRow {
   id: string
   gender?: 'male' | 'female'
+  age?: number | null
+  unitPreference?: 'metric' | 'imperial'
   heightCm?: number | null
   weightKg?: number | null
   neckCm?: number | null
