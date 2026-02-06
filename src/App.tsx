@@ -43,7 +43,7 @@ function App() {
     waistCm: inputs.waistCm ?? null,
     hipCm: inputs.hipCm ?? null,
   }
-  const bodyFat = inputs.gender ? navyBodyFatPercent(measurements) : null
+  const bodyFat = navyBodyFatPercent(measurements)
   const bmiVal =
     inputs.weightKg != null && inputs.heightCm != null
       ? bmi(inputs.weightKg, inputs.heightCm)

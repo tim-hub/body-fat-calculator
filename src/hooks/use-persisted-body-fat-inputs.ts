@@ -21,6 +21,8 @@ export function usePersistedBodyFatInputs(): [BodyFatInputsState, (arg: BodyFatI
           waistCm: row.waistCm ?? undefined,
           hipCm: row.hipCm ?? undefined,
         })
+      } else {
+        setState({ gender: 'male' })
       }
       setIsLoaded(true)
     })
