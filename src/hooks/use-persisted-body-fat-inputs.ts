@@ -4,14 +4,14 @@ import { getInputs, saveInputs, type BodyFatInputsRow } from '@/lib/db'
 export type BodyFatInputsState = Partial<Omit<BodyFatInputsRow, 'id' | 'updatedAt'>>
 
 export function usePersistedBodyFatInputs(): [BodyFatInputsState, (arg: BodyFatInputsState | ((prev: BodyFatInputsState) => BodyFatInputsState)) => void, boolean] {
-  const [inputs, setState] = useState<BodyFatInputsState>({})
+  const [inputs, setState] = useState<BodyFatInputsState>({ gender: 'male' })
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
     getInputs().then((row) => {
       if (row) {
         setState({
-          gender: row.gender,
+          gender: row.gender ?? 'male',
           age: row.age ?? undefined,
           unitPreference: row.unitPreference ?? undefined,
           heightCm: row.heightCm ?? undefined,
@@ -23,6 +23,7 @@ export function usePersistedBodyFatInputs(): [BodyFatInputsState, (arg: BodyFatI
         })
       } else {
         setState({ gender: 'male' })
+        saveInputs({ gender: 'male' })
       }
       setIsLoaded(true)
     })
