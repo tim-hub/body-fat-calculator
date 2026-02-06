@@ -39,7 +39,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       pages: write
-      id-token: user
+      id-token: write
     environment: github_pages
     steps:
       - name: Deploy to GitHub Pages
