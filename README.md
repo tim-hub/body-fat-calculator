@@ -1,4 +1,4 @@
-# Body Fat Calculator
+# [Body Fat Calculator](https://body-fat-calculator.bai.uno/)
 
 Based on the US Navy Method.
 
